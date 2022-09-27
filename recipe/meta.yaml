@@ -28,7 +28,8 @@ test:
     - {{ name }}
   requires:
     - pytest
-    - numpy
+    # TODO: reenable after the test suite is updated
+    #- numpy
   commands:
     - python -m pytest --tb=native --pyargs {{ name }}
 
