@@ -1,5 +1,5 @@
 {% set name = "confection" %}
-{% set version = "0.0.2" %}
+{% set version = "0.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1833a11052db95f212b447009e3d0dd6f09a9ad38228054cefe0daf540134792
+  sha256: 4fec47190057c43c9acbecb8b1b87a9bf31c469caa0d6888a5b9384432fdba5a
 
 build:
   number: 0
