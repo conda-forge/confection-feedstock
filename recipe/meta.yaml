@@ -10,7 +10,7 @@ source:
   sha256: b1ddf5885da635f0e260a40b339730806dfb1bd17d30e08764f35af841b04ecf
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -23,7 +23,7 @@ requirements:
   run:
     - python
     - pydantic >=1.7.4,!=1.8,!=1.8.1,<1.11.0
-    - typing_extensions >=3.7.4.1,<4.2.0  # [py<=37]
+    - typing_extensions >=3.7.4.1,<4.5.0  # [py<=37]
     - srsly >=2.4.0,<3.0.0
 
 test:
