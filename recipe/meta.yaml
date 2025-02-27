@@ -1,12 +1,11 @@
-{% set name = "confection" %}
 {% set version = "0.1.5" %}
 
 package:
-  name: {{ name|lower }}
+  name: confection
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/c/confection/confection-{{ version }}.tar.gz
   sha256: 8e72dd3ca6bd4f48913cd220f10b8275978e740411654b6e8ca6d7008c590f0e
 
 build:
@@ -27,13 +26,13 @@ requirements:
 
 test:
   imports:
-    - {{ name }}
+    - confection
   requires:
     - pytest
     - numpy
     - pip
   commands:
-    - python -m pytest --tb=native --pyargs {{ name }}
+    - python -m pytest --tb=native --pyargs confection
     - pip check
 
 
