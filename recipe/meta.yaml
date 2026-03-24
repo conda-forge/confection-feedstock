@@ -1,4 +1,4 @@
-{% set version = "1.2.1" %}
+{% set version = "1.3.2" %}
 
 package:
   name: confection
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/confection/confection-{{ version }}.tar.gz
-  sha256: 6afa63c5603761764f4b818524d10c7c59660a32d1832aaa82dd5b6bd0876469
+  sha256: 6590efa4e6ee5465ead06f563ae147a6c8059f42852427aa436744951caf8839
 
 build:
   number: 0
