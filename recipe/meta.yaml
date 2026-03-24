@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/c/confection/confection-{{ version }}.tar.gz
-  sha256: 6590efa4e6ee5465ead06f563ae147a6c8059f42852427aa436744951caf8839
+  url: https://github.com/explosion/confection/archive/refs/tags/release-v{{ version }}.tar.gz
+  sha256: f87d706967c3f8bc10b032d28ee0ad71a129d9e2928e07a65b9a84d962c7f6a1
 
 build:
   number: 0
@@ -33,8 +33,10 @@ test:
     - catalogue >=2.0.3,<2.1.0
     - pydantic >=1.7.4,<3.0.0
     - pathy >=0.3.5
+  source_files:
+    - tests/
   commands:
-    - python -m pytest --tb=native --pyargs confection
+    - pytest --tb=native -v tests/
     - pip check
 
 
