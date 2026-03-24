@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: confection
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/confection/confection-{{ version }}.tar.gz
-  sha256: 01de6b5d755e551565935f9efd37eb496826ba1e7c20ed89cc0248e8b3bfd2ee
+  sha256: 05662cfe194892023f44e2c8c8e4f0c2484cc69e195eff8bb341ee87704f41a5
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -53,3 +53,4 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/spacy
+    - rxm7706

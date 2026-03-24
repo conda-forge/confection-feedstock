@@ -151,4 +151,5 @@ Feedstock Maintainers
 =====================
 
 * [@conda-forge/spacy](https://github.com/orgs/conda-forge/teams/spacy/)
+* [@rxm7706](https://github.com/rxm7706/)
 
