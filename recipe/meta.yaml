@@ -1,43 +1,42 @@
-{% set name = "confection" %}
 {% set version = "1.2.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: confection
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/confection-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/c/confection/confection-{{ version }}.tar.gz
   sha256: 05662cfe194892023f44e2c8c8e4f0c2484cc69e195eff8bb341ee87704f41a5
 
 build:
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools
     - pip
+    - setuptools
   run:
-    - python >={{ python_min }},<4.0
+    - python >={{ python_min }}
 
 test:
   imports:
     - confection
-  commands:
-    - pip check
-    - python -m pytest --tb=native --pyargs confection
   requires:
-    - pip
     - python {{ python_min }}
-    - catalogue >=2.0.3,<2.1.0
-    - pathy >=0.3.5
-    - pytest >=5.2.0,!=7.1.0
-    - numpy >=1.15.0
+    - pytest
     - hypothesis
-    - pydantic >=1.7.4,<3.0.0  # for ensure_schema shim tests
-    - ruff
+    - numpy
+    - pip
+    - catalogue >=2.0.3,<2.1.0
+    - pydantic >=1.7.4,<3.0.0
+    - pathy >=0.3.5
+  commands:
+    - python -m pytest --tb=native --pyargs confection
+    - pip check
+
 
 about:
   home: https://github.com/explosion/confection
