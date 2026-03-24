@@ -7,6 +7,8 @@ package:
 source:
   url: https://github.com/explosion/confection/archive/refs/tags/release-v{{ version }}.tar.gz
   sha256: f87d706967c3f8bc10b032d28ee0ad71a129d9e2928e07a65b9a84d962c7f6a1
+  patches:
+    - patches/0001-make-tests-importable-out-of-tree.patch
 
 build:
   number: 0
